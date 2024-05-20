@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+*, *::after, *::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Finger Paint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root{
+    --primary-btn-color : rgb(35, 87, 244);
+    --secondary-btn-color: rgb(35, 136, 244);
+    --cell-size: 100px;
+}
+
+.container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 5rem;
+    row-gap: 3rem;
+}
+
+.container > h1{
+    margin-bottom: 2rem;
+}
+
+.board{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: none;
+    gap: .18rem;
+    margin: auto;
+    background-color: black;
+    border: none;
+}
+
+.cell{
+    width: var(--cell-size);
+    height: var(--cell-size);
+    line-height: var(--cell-size);
+    font-size: 4.2rem;
+    cursor: pointer;
+    background-color: white;
+    border: none;
+}
+
+.curtain{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 2rem;
+}
+
+.curtain>h1{
+    color: white;
+    font-size: 3rem;
+}
+
+button{
+    padding: .8rem;
+    background-color: var(--primary-btn-color);
+    border-radius: 8px;
+    border: none;
+    color: white;
+    width: 30%;
+    max-width: 200px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+
+button:hover{
+    background-color: var(--secondary-btn-color)
+}
+
+.hidden{
+    display: none;
+}
+
+@media screen and (width >= 720px) {
+    .cell{
+        width: 160px;
+        height: 160px;
+        line-height: 160px;
+        font-size: 6rem;
+    }
+}
